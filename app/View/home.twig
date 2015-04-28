@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MPWAR Provincias - Home</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/custom.css"/>
+    <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
+
+
+
+</head>
+<body class="intro">
+
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <h3 class="white">Destacadas</h3>
+            </li>
+
+            {% for currentProvince in provinces.topTen %}
+
+                <li><a href="">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a></li>
+
+            {% endfor %}
+
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <div class="container-fluid">
+            <!-- Navigation -->
+            <!-- Static navbar -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Inicio</a></li>
+                            <li><a href="/calculadora-provincia">Calculador de provincia</a></li>
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="search-nav">
+                                <form action="" class="search-form">
+                                    <div class="form-group has-feedback">
+                                        <label for="search" class="sr-only">Search</label>
+                                        <input type="text" class="form-control" name="search" id="search" placeholder="Provincia">
+                                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Provincias de España</h1>
+
+                    <p>Aquí se muestran todas las provincias </p>
+                    <ul class="list-inline">
+                        {% for currentProvince in provinces.all %}
+
+                            <li><a href="">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a>
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container-fluid">
+            <div class="divider"></div>
+            <div class="row">
+            {% for row in provinces.topTen|slice(0,6)|batch(3) %}
+
+                <div class="row">
+                    {% for province in row %}
+                        <div class="col-md-4">
+                            <h2 class="textcenter">{{ province.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</h2>
+                            <a href="">
+                                <img class="img-responsive"
+                                     src="assets/img/{{ province.image|convert_encoding('UTF-8', 'ISO-8859-1') }}"
+                                     alt="{{ province.image|convert_encoding('UTF-8', 'ISO-8859-1') }}"/></a>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+                <div class="divider"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Lorem Fistrum</h1>
+
+                    <p>Lorem fistrum sexuarl fistro ese pedazo de a wan a gramenawer está la cosa muy malar pupita
+                        torpedo benemeritaar qué dise usteer. Ese que llega condemor sexuarl me cago en tus muelas te
+                        voy a borrar el cerito torpedo de la pradera diodeno. Ahorarr condemor ese que llega te va a
+                        hasé pupitaa diodeno está la cosa muy malar hasta luego Lucas qué dise usteer benemeritaar la
+                        caidita me cago en tus muelas. La caidita ahorarr a wan benemeritaar te va a hasé pupitaa te voy
+                        a borrar el cerito te voy a borrar el cerito. Tiene musho peligro la caidita caballo blanco
+                        caballo negroorl te va a hasé pupitaa pecador diodenoo diodenoo hasta luego Lucas.
+
+                        Sexuarl por la gloria de mi madre jarl al ataquerl. La caidita hasta luego Lucas ese hombree de
+                        la pradera. Papaar papaar papaar papaar papaar papaar pecador diodenoo te voy a borrar el
+                        cerito. Al ataquerl ese que llega benemeritaar al ataquerl amatomaa por la gloria de mi madre.
+                        Amatomaa la caidita apetecan quietooor pecador me cago en tus muelas por la gloria de mi madre
+                        quietooor. Está la cosa muy malar llevame al sircoo se calle ustée pecador a peich de la pradera
+                        sexuarl.
+
+                        Lorem fistrum sexuarl fistro ese pedazo de a wan a gramenawer está la cosa muy malar pupita
+                        torpedo benemeritaar qué dise usteer. Ese que llega condemor sexuarl me cago en tus muelas te
+                        voy a borrar el cerito torpedo de la pradera diodeno. Ahorarr condemor ese que llega te va a
+                        hasé pupitaa diodeno está la cosa muy malar hasta luego Lucas qué dise usteer benemeritaar la
+                        caidita me cago en tus muelas. La caidita ahorarr a wan benemeritaar te va a hasé pupitaa te voy
+                        a borrar el cerito te voy a borrar el cerito. Tiene musho peligro la caidita caballo blanco
+                        caballo negroorl te va a hasé pupitaa pecador diodenoo diodenoo hasta luego Lucas.
+
+                        Sexuarl por la gloria de mi madre jarl al ataquerl. La caidita hasta luego Lucas ese hombree de
+                        la pradera. Papaar papaar papaar papaar papaar papaar pecador diodenoo te voy a borrar el
+                        cerito. Al ataquerl ese que llega benemeritaar al ataquerl amatomaa por la gloria de mi madre.
+                        Amatomaa la caidita apetecan quietooor pecador me cago en tus muelas por la gloria de mi madre
+                        quietooor. Está la cosa muy malar llevame al sircoo se calle ustée pecador a peich de la pradera
+                        sexuarl.
+
+                        Va usté muy cargadoo va usté muy cargadoo fistro caballo blanco caballo negroorl mamaar pecador
+                        apetecan torpedo me cago en tus muelas diodeno. Te voy a borrar el cerito no te digo trigo por
+                        no llamarte Rodrigor mamaar apetecan condemor llevame al sircoo te va a hasé pupitaa fistro
+                        pecador diodenoo está la cosa muy malar. Ese que llega jarl apetecan torpedo se calle ustée se
+                        calle ustée la caidita. Me cago en tus muelas jarl qué dise usteer condemor te va a hasé
+                        pupitaa. Hasta luego Lucas mamaar a peich ese pedazo de. Condemor me cago en tus muelas caballo
+                        blanco caballo negroorl torpedo pupita por la gloria de mi madre qué dise usteer llevame al
+                        sircoo la caidita diodeno. Diodeno tiene musho peligro te voy a borrar el cerito la caidita
+                        apetecan jarl está la cosa muy malar papaar papaar no te digo trigo por no llamarte Rodrigor.
+                        Ese hombree hasta luego Lucas se calle ustée benemeritaar diodeno te va a hasé pupitaa por la
+                        gloria de mi madre tiene musho peligro. </p>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script>
+    var data = [
+        {% for currentProvince in provinces.all %}
+                { value: "", label: "{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}" },
+        {% endfor %}
+
+
+    ];
+    $(function() {
+        $("#search").autocomplete({
+            source: data
+        });
+    });
+
+</script>
+
+
+</body>
+</html> 

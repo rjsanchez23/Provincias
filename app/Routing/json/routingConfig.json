@@ -1,0 +1,12 @@
+{
+  "/": {
+    "app\\Controller\\HomeController": "init"
+  },
+  "calculadora-provincia": {
+    "app\\Controller\\HomeController": "calculadoraProvincia"
+  },
+  "calculadora-provincia/{codigoPostal}": {
+    "app\\Controller\\HomeController": "buscarCodigoPostal"
+  }
+
+}

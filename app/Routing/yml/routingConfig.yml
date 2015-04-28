@@ -1,0 +1,8 @@
+
+# /:
+#    app\Controller\HomeController: init
+
+#user/{var1}:
+#    app\Controller\HomeController: userURL
+
+
