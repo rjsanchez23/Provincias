@@ -26,7 +26,7 @@
 
             {% for currentProvince in provinces.topTen %}
 
-                <li><a href="">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a></li>
+                <li><a href="municipios/{{  currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a></li>
 
             {% endfor %}
 
@@ -78,7 +78,7 @@
                     <ul class="list-inline">
                         {% for currentProvince in provinces.all %}
 
-                            <li><a href="">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a>
+                            <li><a href="municipios/{{currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a>
                             </li>
 
                         {% endfor %}
@@ -99,7 +99,7 @@
                     {% for province in row %}
                         <div class="col-md-4">
                             <h2 class="textcenter">{{ province.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</h2>
-                            <a href="">
+                            <a href="municipios/{{ province.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}">
                                 <img class="img-responsive"
                                      src="assets/img/{{ province.image|convert_encoding('UTF-8', 'ISO-8859-1') }}"
                                      alt="{{ province.image|convert_encoding('UTF-8', 'ISO-8859-1') }}"/></a>
