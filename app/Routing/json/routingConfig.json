@@ -7,6 +7,9 @@
   },
   "calculadora-provincia/{codigoPostal}": {
     "app\\Controller\\HomeController": "buscarCodigoPostal"
+  },
+  "municipios/{provincia}": {
+    "app\\Controller\\HomeController": "municipios"
   }
 
 }

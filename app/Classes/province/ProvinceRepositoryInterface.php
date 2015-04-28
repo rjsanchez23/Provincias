@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Classes;
+namespace app\Classes\province;
 
 use app\Model\Province;
 

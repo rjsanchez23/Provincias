@@ -57,27 +57,18 @@
         </nav>
         <div class="row">
             <div class="col-lg-12">
-                <h1>Calculadora de provincias</h1>
+                <h1>Municipios de {{ municipios.provincia }}</h1>
 
-                <p>Introduzca el codigo postal que desea buscar </p>
+                <p>Aquí se muestran los muncipios pertenecientes a {{ municipios.provincia }} </p>
+                <ul class="list-inline">
+                    {% for currentMunicipio in municipios|slice(0,10) %}
 
-                <form class="form-inline" id="cpForm">
+                        <li><a href="">{{ currentMunicipio.nombre|convert_encoding('UTF-8', 'ISO-8859-1') }}</a>
+                        </li>
 
-                    <div class="form-group">
-                        <label for="codigoPostal">Código postal</label>
-                        <input type="text" class="form-control" id="codigoPostal">
-                    </div>
-                    <button type="submit" class="btn btn-default" id="cpButton">Buscar</button>
-                </form>
+                    {% endfor %}
+                </ul>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-
-                {% if provincia is defined %}
-                 <h1>{{ provincia.cPostal }} => {{ provincia.provincia }}</h1>
-                {% endif %}
             </div>
         </div>
 
@@ -101,28 +92,13 @@
         $(function() {
             $("#search").autocomplete({
                 source: data
-            });
+
+            }).data("ui-autocomplete")._renderItem = function (ul, item) {
+                alert("entra");
+                return $("<li>").append("<a href='http://www.google.com' >"+item.label+"</a>").appendTo(ul);
+            };
         });
 
-
-        $("#cpForm").on("submit",function(e) {
-
-            var postalCode = $("#codigoPostal").val();
-            console.log( document.location.hostname+'/calculadora-provincia/'+postalCode);
-            window.location.replace("http://"+document.location.hostname+'/calculadora-provincia/'+postalCode);
-            e.preventDefault();
-        });
-        var inputNumber = document.getElementById('codigoPostal');
-        inputNumber.setAttribute("onkeypress", "return isNumberKey(event)");
-        //Comprueba la tecla pulsada y solo permite introducir números en el campo
-        function isNumberKey(evt) {
-            var charCode = (evt.which) ? evt.which : event.keyCode;
-            if (charCode > 31
-                    && (charCode < 48 || charCode > 57)){
-                return false;
-            }
-            return true;
-        }
     </script>
 
 

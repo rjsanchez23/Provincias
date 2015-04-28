@@ -170,7 +170,7 @@
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
 <script>
     var data = [
         {% for currentProvince in provinces.all %}
@@ -182,7 +182,10 @@
     $(function() {
         $("#search").autocomplete({
             source: data
-        });
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+
+            return $("<li>").append("<a href='/municipios/"+item.label+"' >"+item.label+"</a>").appendTo(ul);
+        };
     });
 
 </script>

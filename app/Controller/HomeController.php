@@ -4,9 +4,7 @@ namespace app\Controller;
 
 
 use src\Component\Controller\Controller;
-use src\Component\Response\JsonResponse;
 use src\Component\Response\Response;
-use src\Language\Language;
 
 
 class HomeController extends Controller
@@ -56,6 +54,20 @@ class HomeController extends Controller
         }
         $provinces[0]["cPostal"] = $codigoPostal;
         return new Response($this->container->get('Twig')->render('calculadoraProvincia.twig', 'provincia', $provinces[0]));
+
+    }
+
+    public function municipios($provincia)
+    {
+
+        $townRepository = $this->container->get("TownRepository");
+        $municipios = $townRepository->findByProvince($provincia);
+
+        /*if(empty($provincia)){
+            $provinces[0]["municipio"] = "No se encontrado la provincia";
+        }*/
+        $municipios["provincia"] = $provincia;
+        return new Response($this->container->get('Twig')->render('municipios.twig', 'municipios', $municipios));
 
     }
         
