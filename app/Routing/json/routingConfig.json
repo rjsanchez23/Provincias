@@ -10,6 +10,9 @@
   },
   "municipios/{provincia}": {
     "app\\Controller\\HomeController": "municipios"
+  },
+  "municipios/{provincia}/{page}": {
+    "app\\Controller\\HomeController": "municipios"
   }
 
 }

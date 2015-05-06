@@ -76,7 +76,7 @@
             <div class="col-lg-12">
 
                 {% if provincia is defined %}
-                 <h1>{{ provincia.cPostal }} => {{ provincia.provincia }}</h1>
+                 <h1>{{ provincia.cPostal }} => <a href="/municipios/{{ provincia.provincia|replace('/','-')|url_encode }}">{{ provincia.provincia }}</a></h1>
                 {% endif %}
             </div>
         </div>

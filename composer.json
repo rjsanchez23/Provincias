@@ -14,7 +14,7 @@
 
     "require": {
 		"php": ">=5.3.2",
-		"rjsanchez23/mpwarfwk": "dev-develop"
+		"rjsanchez23/mpwarfwk": "dev-Performance"
 	},
 	"minimum-stability": "dev",
 	"autoload": {

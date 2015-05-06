@@ -26,7 +26,7 @@
 
             {% for currentProvince in provinces.topTen %}
 
-                <li><a href="municipios/{{  currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a></li>
+                <li><a href="/municipios/{{ currentProvince.provincia|replace('/','-')|url_encode }}">{{ currentProvince.provincia }}</a></li>
 
             {% endfor %}
 
@@ -78,7 +78,7 @@
                     <ul class="list-inline">
                         {% for currentProvince in provinces.all %}
 
-                            <li><a href="municipios/{{currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}">{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</a>
+                            <li><a href="/municipios/{{ currentProvince.provincia|replace('/','-')|url_encode }}">{{ currentProvince.provincia }}</a>
                             </li>
 
                         {% endfor %}
@@ -98,12 +98,11 @@
                 <div class="row">
                     {% for province in row %}
                         <div class="col-md-4">
-                            <h2 class="textcenter">{{ province.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}</h2>
-                            <a href="municipios/{{ province.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}">
+                            <h2 class="textcenter">{{ province.provincia }}</h2>
+                            <a href="">
                                 <img class="img-responsive"
-                                     src="assets/img/{{ province.image|convert_encoding('UTF-8', 'ISO-8859-1') }}"
-                                     alt="{{ province.image|convert_encoding('UTF-8', 'ISO-8859-1') }}"/></a>
-
+                                     src="assets/img/{{ province.imagen }}"
+                                     alt="{{ province.imagen }}"/></a>
                         </div>
                     {% endfor %}
                 </div>
@@ -174,7 +173,7 @@
 <script>
     var data = [
         {% for currentProvince in provinces.all %}
-                { value: "", label: "{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}" },
+                { value: "{{ currentProvince.provincia|replace('/','-')|url_encode }}", label: "{{ currentProvince.provincia }}" },
         {% endfor %}
 
 
@@ -184,7 +183,7 @@
             source: data
         }).data("ui-autocomplete")._renderItem = function (ul, item) {
 
-            return $("<li>").append("<a href='/municipios/"+item.label+"' >"+item.label+"</a>").appendTo(ul);
+            return $("<li>").append("<a href='/municipios/"+item.value+"' >"+item.label+"</a>").appendTo(ul);
         };
     });
 
