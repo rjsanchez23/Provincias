@@ -94,16 +94,17 @@
             <div class="divider"></div>
             <div class="row">
             {% for row in provinces.topTen|slice(0,6)|batch(3) %}
-
+                {% set contador = 1 %}
                 <div class="row">
                     {% for province in row %}
                         <div class="col-md-4">
                             <h2 class="textcenter">{{ province.provincia }}</h2>
                             <a href="">
                                 <img class="img-responsive"
-                                     src="assets/img/{{ province.imagen }}"
+                                     src="http://static{{ contador }}.provincias.dev/{{ province.imagen }}"
                                      alt="{{ province.imagen }}"/></a>
                         </div>
+                        {% set contador = contador + 1 %}
                     {% endfor %}
                 </div>
             {% endfor %}
