@@ -8,7 +8,6 @@
     <title>MPWAR Provincias - Home</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/assets/css/custom.css"/>
-    <link href="/assets/css/jquery-ui.min.css" rel="stylesheet">
 
 
 </head>
@@ -37,18 +36,6 @@
                         <li><a href="/">Inicio</a></li>
                         <li class="active"><a href="/calculadora-provincia">Calculador de provincia</a></li>
 
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="search-nav">
-                            <form action="" class="search-form">
-                                <div class="form-group has-feedback">
-                                    <label for="search" class="sr-only">Search</label>
-                                    <input type="text" class="form-control" name="search" id="search"
-                                           placeholder="Provincia">
-                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                                </div>
-                            </form>
-                        </li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -94,30 +81,9 @@
     </div>
 
 
-    <script type="text/javascript" src="/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 
     <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
-    <script>
-        var data = [
-            {% for currentProvince in provinces.all %}
-            { value: "", label: "{{ currentProvince.provincia|convert_encoding('UTF-8', 'ISO-8859-1') }}" },
-            {% endfor %}
-
-
-        ];
-        $(function() {
-            $("#search").autocomplete({
-                source: data
-
-            }).data("ui-autocomplete")._renderItem = function (ul, item) {
-                alert("entra");
-                return $("<li>").append("<a href='http://www.google.com' >"+item.label+"</a>").appendTo(ul);
-            };
-        });
-
-    </script>
-
 
 </body>
 </html> 

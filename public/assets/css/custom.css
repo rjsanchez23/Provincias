@@ -11,6 +11,17 @@ html{
 ul{
     list-style: none;
 }
+body{
+    background-color: #E3E0FF;
+}
+.navbar-default{
+    background-color: #4E4693;
+
+
+}
+.navbar-default .navbar-nav > li > a{
+    color: #ffffff;
+}
 .intro {
 
     height: 100%;
@@ -161,6 +172,9 @@ ul{
 }
 .white{
     color:#ffffff;
+}
+.ui-widget-content{
+    background-color: #ffffff;
 }
 @media(min-width:768px) {
     #wrapper {

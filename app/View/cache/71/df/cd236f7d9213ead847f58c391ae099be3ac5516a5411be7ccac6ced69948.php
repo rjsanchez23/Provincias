@@ -1,110 +1,92 @@
+<?php
 
+/* 404.tpl */
+class __TwigTemplate_71dfcd236f7d9213ead847f58c391ae099be3ac5516a5411be7ccac6ced69948 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo "
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 
-    <title>MPWAR Framework - users</title>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" />
+    <title>MPWAR Framework - 404</title>
+    <link rel=\"stylesheet\" href=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css\" />
+    <link rel=\"stylesheet\" href=\"http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css\" />
+    <link rel=\"stylesheet\" href=\"http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css\" />
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script type=\"text/javascript\" src=\"https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js\"></script>
+    <script type=\"text/javascript\" src=\"https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js\"></script>
     <![endif]-->
 
 </head>
-<body class=" intro">
-<div id="wrapper">
+<body class=\" intro\">
+<div id=\"wrapper\">
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
+    <div id=\"sidebar-wrapper\">
+        <ul class=\"sidebar-nav\">
+            <li class=\"sidebar-brand\">
 
-                <a href="/home">Menú</a>
+                <a href=\"/home\">Menú</a>
 
             </li>
             <li>
-                <a href="/twig">Plantilla básica Twig</a>
+                <a onclick=\"window.history.back()\" href=\"#\">Volver</a>
             </li>
-            <li>
-                <a href="/smarty">Plantilla básica Smarty</a>
-            </li>
-            <li>
-                <a href="/user/1">Usuario por URL</a>
-            </li>
-            <li>
-                <a href="/eloquent">Usuario en DB con Eloquent</a>
-            </li>
-            <li>
-                <a href="/pdo">Usuario en DB con PDO</a>
-            </li>
-            <li>
-                <a href="/newUser">Nuevo usuario</a>
-            </li>
-            <li>
-                <a href="/404">Respuesta Http 404</a>
-            </li>
-            <li>
-                <a href="/json">Ajax con Json response</a>
-            </li>
-            <li>
-                <a href="/quijote/es">Traducciones</a>
-            </li>
-            <li>
-                <a href="/logout">Logout</a>
-            </li>
+
         </ul>
     </div>
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-offset-3">
+    <div id=\"page-content-wrapper\">
+        <div class=\"container-fluid\">
+            <div class=\"row\">
+                <div class=\"col-lg-6 col-md-offset-3\">
                     <h1>MPWAR Framework</h1>
-                    <h2>Usuarios cargados con {{ data.db_type }}</h2>
-                    <h4>Usuarios:</h4>
 
-                    <div class="col-lg-3 col-md-offset-3">
-                        {% for user in data.users %}
-
-                            <dl class="dl-horizontal">
-                                <dt>Nombre:</dt>
-                                <dd><a href="/user/{{ user.id }}" style="color: #080808"> {{ user.name }}</a></dd>
-                                <dt>Email:</dt>
-                                <dd>{{ user.email }}</dd>
-                            </dl>
-
-                        {% endfor %}
-
-                    </div>
+                        <h3>Ups, página no encontrada</h3>
+                        <h3>HTTP: 404</h3>
 
 
                 </div>
-                <p class="col-md-12">* pinchar en el nombre para ver el paso de variables por url</p>
+
+
             </div>
         </div>
     </div>
+    <img src=\"assets/img/homer-doh.png\" class=\"img-responsive\" alt=\"Homer\" style=\"position: absolute; bottom: 0\">
+    <img src=\"assets/img/homer-doh.png\" class=\"img-responsive\" alt=\"Homer\" style=\"position: absolute; bottom: 0\">
     <!-- /#page-content-wrapper -->
 </div>
 <!-- /#wrapper -->
 
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type=\"text/javascript\" src=\"//code.jquery.com/jquery-1.10.2.min.js\"></script>
+<script type=\"text/javascript\" src=\"//code.jquery.com/ui/1.10.4/jquery-ui.min.js\"></script>
+<script type=\"text/javascript\" src=\"//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js\"></script>
 <!-- Menu Toggle Script -->
 <script>
-    $("#menu-toggle").click(function(e) {
+    \$(\"#menu-toggle\").click(function(e) {
         e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+        \$(\"#wrapper\").toggleClass(\"toggled\");
     });
 </script>
 <style>
@@ -122,7 +104,7 @@
         height: 100%;
         text-align: center;
         color: #fff;
-        background: url("assets/img/intro-bg.jpg") no-repeat scroll center bottom / cover #fff;
+        background: url(\"assets/img/intro-bg.jpg\") no-repeat scroll center bottom / cover #fff;
     }
     #wrapper {
         padding-left: 0;
@@ -224,4 +206,16 @@
 </style>
 
 </body>
-</html> 
+</html> ";
+    }
+
+    public function getTemplateName()
+    {
+        return "404.tpl";
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  19 => 1,);
+    }
+}

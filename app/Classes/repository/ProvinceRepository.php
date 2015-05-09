@@ -21,7 +21,7 @@ class ProvinceRepository extends  abstractRepository
         if($cacheResult = $this->cacheGet(static::class, "find", array($id))) return $cacheResult;
 
 
-        $result = $this->database->select("SELECT * FROM provincias WHERE id_provincia = :id", array("id" => $id));
+        $result = $this->database->select("SELECT provincia, imagen FROM provincias WHERE id_provincia = :id", array("id" => $id));
 
         $this->cache->set($this->generateCacheKey(static::class, "find", array($id)),$result,3);
         return $result;
@@ -37,9 +37,9 @@ class ProvinceRepository extends  abstractRepository
     {
         if($cacheResult = $this->cacheGet(static::class, "findAll")) return $cacheResult;
 
-        $result = $this->database->selectAll('provincias');
+        $result = $this->database->select("SELECT provincia, imagen FROM provincias");
 
-        $this->cache->set($this->generateCacheKey(static::class, "findAll"),$result,300);
+        $this->cache->set($this->generateCacheKey(static::class, "findAll"),$result,30000);
         return $result;
     }
     public function create($name)
