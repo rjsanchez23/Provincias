@@ -14,17 +14,13 @@ class HomeController extends Controller
     public function init()
     {
 
-        $this->memcache->delete($this->generateCacheKey(static::class,"init"));
         $cacheResult = $this->cacheGet(static::class, "init");
          if($cacheResult){
              return $cacheResult;
          }
 
-
-
         $provinceRepository = $this->container->get("ProvinceRepository");
         $provinces = $provinceRepository->findAll();
-
 
 
         $topTenProvinces = $this->TopProvinces($provinces, 10);

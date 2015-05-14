@@ -4,7 +4,7 @@
 
 return array (
     'driver'    => 'mysql',
-    'host'      => '127.0.0.1',
+    'host'      => 'localhost',
     'port'      => '3306',
     'database'  => 'sphinx_demo',
     'username'  => 'root',
