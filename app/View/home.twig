@@ -59,7 +59,7 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="search-nav">
-                                <form action="" class="search-form">
+                                <form action="" class="search-form" method="GET" id="provincia_form">
                                     <div class="form-group has-feedback">
                                         <label for="search" class="sr-only">Search</label>
                                         <input type="text" class="form-control" name="search" id="search" placeholder="Provincia">
@@ -100,8 +100,9 @@
                     {% for province in row %}
                         <div class="col-md-4">
                             <h2 class="textcenter">{{ province.provincia }}</h2>
-                            <a href="">
-                                <img class="img-responsive"
+                            <a href="/municipios/{{ province.provincia|replace('/','-')|url_encode }}">
+
+                            <img class="img-responsive"
                                      src="http://static{{ contador }}.provincias.dev/{{ province.imagen }}"
                                      alt="{{ province.imagen }}"/></a>
                         </div>
@@ -183,10 +184,14 @@
     $(function() {
         $("#search").autocomplete({
             source: data
-        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+        });
 
-            return $("<li>").append("<a href='/municipios/"+item.value+"' >"+item.label+"</a>").appendTo(ul);
-        };
+        $("#provincia_form").on("submit",function(evt){
+
+            window.location.replace("http://" + document.location.hostname + '/municipios/'+$("#search").val());
+            evt.preventDefault();
+        })
+
     });
 
 </script>

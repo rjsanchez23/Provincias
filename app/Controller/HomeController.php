@@ -82,7 +82,7 @@ class HomeController extends Controller
         $provincia = urldecode(str_replace("-", "/", $provincia));
         $redis->zincrby("topTen", 1, $provincia);
         $this->memcache->delete($this->generateCacheKey("url","/"));
-        $cacheResult = $this->cacheGet(static::class, "municipios".$provincia);
+        $cacheResult = $this->cacheGet(static::class, "municipios".$provincia.$page);
         if($cacheResult){
 
             return $cacheResult;
@@ -101,7 +101,7 @@ class HomeController extends Controller
                 'page'       => $page
             )
         ));
-        $this->memcache->set($this->generateCacheKey(static::class, "municipios".$provincia),$response,840);
+        $this->memcache->set($this->generateCacheKey(static::class, "municipios".$provincia.$page),$response,840);
         return $response;
 
     }

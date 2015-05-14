@@ -4,8 +4,9 @@
 
 return array (
     'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'database'  => 'users',
+    'host'      => '127.0.0.1',
+    'port'      => '3306',
+    'database'  => 'sphinx_demo',
     'username'  => 'root',
     'password'  => 'root',
     'charset'   => 'utf8',
