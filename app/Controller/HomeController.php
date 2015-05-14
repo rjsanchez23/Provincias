@@ -14,7 +14,9 @@ class HomeController extends Controller
     public function init()
     {
 
-         if($cacheResult = $this->cacheGet(static::class, "init")){
+        $this->memcache->delete($this->generateCacheKey(static::class,"init"));
+        $cacheResult = $this->cacheGet(static::class, "init");
+         if($cacheResult){
              return $cacheResult;
          }
 
@@ -32,8 +34,8 @@ class HomeController extends Controller
                 "topTen" => $topTenProvinces
             )
         ));
-        $this->memcache->delete($this->generateCacheKey("url","/"));
-        $this->memcache->set($this->generateCacheKey(static::class, "init"),$response,840);
+
+        $this->memcache->set($this->generateCacheKey(static::class, "init"),$response,15);
         return $response;
     }
 
@@ -79,8 +81,10 @@ class HomeController extends Controller
         $redis = (new Redis())->client();
         $provincia = urldecode(str_replace("-", "/", $provincia));
         $redis->zincrby("topTen", 1, $provincia);
+        $this->memcache->delete($this->generateCacheKey("url","/"));
+        $cacheResult = $this->cacheGet(static::class, "municipios".$provincia);
+        if($cacheResult){
 
-        if($cacheResult = $this->cacheGet(static::class, "municipios")){
             return $cacheResult;
         }
         $townRepository = $this->container->get("TownRepository");
@@ -97,7 +101,7 @@ class HomeController extends Controller
                 'page'       => $page
             )
         ));
-        $this->memcache->set($this->generateCacheKey(static::class, "municipios"),$response,840);
+        $this->memcache->set($this->generateCacheKey(static::class, "municipios".$provincia),$response,840);
         return $response;
 
     }

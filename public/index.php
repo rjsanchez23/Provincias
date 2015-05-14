@@ -10,6 +10,8 @@ use src\Component\Request\Session;
 use src\Component\Response\Response;
 use src\Component\Services\Container;
 
+header( "Cache-Control: public, must-revalidate, max-age=60, smaxage=60" );
+
 try {
 
 
