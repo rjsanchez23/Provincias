@@ -44,7 +44,7 @@ class HomeController extends Controller
 
         $redis = (new Redis())->client();
 
-        $topProvinces = $redis->zrevrange("topTen", 0, $number-1);
+        $topProvinces = $redis->zrevrange("topTen", 0, $number);
         foreach ($provinces as $currentProvince) {
 
             if (false !== ($key = array_search($currentProvince["provincia"], $topProvinces))) {
